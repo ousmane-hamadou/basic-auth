@@ -1,0 +1,35 @@
+{
+  "name": "basic-auth",
+  "version": "0.1.0",
+  "description": "basic authentication system",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ousmane-hamadou/basic-auth.git"
+  },
+  "keywords": [
+    "authentication",
+    "auth"
+  ],
+  "author": "ebree",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ousmane-hamadou/basic-auth/issues"
+  },
+  "type": "module",
+  "homepage": "https://github.com/ousmane-hamadou/basic-auth#readme",
+  "dependencies": {
+    "ejs": "^3.1.7",
+    "express": "^4.18.1",
+    "express-session": "^1.17.2",
+    "sequelize": "^6.19.0",
+    "sqlite3": "^5.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}

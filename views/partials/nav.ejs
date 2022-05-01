@@ -1,0 +1,9 @@
+<nav class="navbar">
+  <% if("signin" in buttons) { %>
+  <a class="navbar-item button" href="/signin">Sign In</a>
+  <% } else if("signup" in buttons) { %>
+  <a class="navbar-item button" href="/signup">Sign Up</a>
+  <% } else if("disconnect" in buttons) { %>
+  <a class="navbar-item button" href="/disconnect">Disconnect</a>
+  <% } %>
+</nav>

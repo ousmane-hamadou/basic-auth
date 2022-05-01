@@ -1,0 +1,238 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --teinte: 237;
+  --saturation: 100%;
+  --luminosite: 61%;
+
+  --brand: hsl(var(--teinte) var(--saturation) var(--luminosite));
+
+  --texte1: hsl(var(--teinte) var(--saturation) 10%);
+  --texte2: hsl(var(--teinte) 30% 30%);
+
+  --surface1: hsl(var(--teinte) 25% 90%);
+  --surface2: hsl(var(--teinte) 20% 99%);
+  --surface3: hsl(var(--teinte) 20% 92%);
+  --surface4: hsl(var(--teinte) 20% 85%);
+  --surface5: hsl(var(--teinte) var(--saturation) 85%);
+  --surface6: hsl(var(--teinte) var(--saturation) 98%);
+  --surface7: hsl(var(--teinte) 30% 98%);
+
+  --padding-1: 16px;
+  --padding-2: 12px;
+  --container-padding: calc((100vw - 70vw) / 2);
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", system-ui, sans-serif;
+  line-height: 1.7;
+  background-color: var(--surface2);
+  color: var(--texte1);
+  min-width: 400px;
+}
+
+h1 {
+  font-weight: 400;
+  line-height: 1.2;
+  font-size: clamp(1.25rem, 1.11rem + 0.71vw, 1.75rem);
+}
+
+p {
+  font-size: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+a {
+  color: var(--brand);
+}
+
+.page {
+  padding-bottom: var(--padding-1);
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  box-shadow: 0px 1px 6px var(--surface4);
+  padding-inline: var(--container-padding);
+}
+
+.main-content {
+  padding-inline: var(--container-padding);
+}
+
+.container {
+  max-width: 80%;
+  margin-block: calc(var(--padding-1) * 2);
+  margin-inline: auto;
+}
+
+.brand {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  line-height: 1.2;
+  font-size: clamp(1.75rem, 1.39rem + 1.79vw, 3rem);
+}
+
+.navbar {
+  display: flex;
+  gap: 8px;
+  padding-inline: var(--padding-1);
+  padding-block: var(--padding-2);
+  justify-content: end;
+}
+
+.actions {
+  display: flex;
+  justify-content: end;
+}
+
+.button {
+  all: unset;
+  display: block;
+  padding-block: calc(1em / 4);
+  padding-inline: 1em;
+  border: 1px solid var(--surface4);
+  border-radius: 4px;
+
+  text-decoration: none;
+  color: var(--texte2);
+  font-size: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+}
+
+.button:hover {
+  background-color: var(--surface3);
+}
+
+.button:active {
+  background-color: var(--surface1);
+}
+
+.message-sender,
+.message-content {
+  margin: 0;
+  padding: 0;
+  font-size: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+}
+
+.message-sender {
+  font-weight: bold;
+  color: var(--texte1);
+}
+
+.message-content {
+  color: var(--texte2);
+}
+
+.messages {
+  padding: 1em;
+}
+
+.message {
+  padding: 1rem;
+}
+
+.message:hover {
+  background-color: var(--surface6);
+}
+
+.is-new {
+  background-color: var(--surface3);
+}
+
+.is-new:hover {
+  background-color: var(--surface1);
+}
+
+.message:not(:last-child) {
+  border-bottom: 1px solid var(--surface1);
+  margin-bottom: 8px;
+}
+
+.input {
+  display: block;
+  line-height: 1.7;
+  padding-block: 2px;
+  font-size: 1em;
+  min-width: 335px;
+}
+
+.form-control:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.signup {
+  display: grid;
+  place-items: center;
+  min-height: 50vh;
+}
+
+.input {
+  all: unset;
+  line-height: 1.9;
+  background-color: var(--surface7);
+  padding-block: 6px;
+  padding-inline: 4px;
+  border: 2px solid lightgray;
+  border-radius: 4px;
+  color: var(--texte1);
+  min-width: 335px;
+}
+
+.input:focus {
+  border-color: gray;
+  background-color: var(--surface6);
+}
+
+.dialog {
+  border: none;
+  border: 1px solid var(--surface4);
+  border-radius: 4px;
+  background-color: var(--surface6);
+}
+
+.page.dialog-active {
+  filter: blur(4px);
+}
+
+/*
+.notification-header p,
+.notification-body p {
+  margin: 0;
+
+}
+
+.notification.is-danger .notification-header {
+  background-color: rgba(220, 20, 60, 0.76);
+  padding: var(--padding-2) var(--padding-1);
+  color: white;
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+}
+
+.notification.is-danger .notification-body {
+  background-color: rgba(220, 20, 60, 0.62);
+  padding: var(--padding-2) var(--padding-1);
+  color: white;
+}
+.message.is-info-light .message-header {
+  background-color: var(--surface5);
+  padding: var(--padding-2) var(--padding-1);
+  color: var(--texte1);
+  border-start-start-radius: 4px;
+  border-start-end-radius: 4px;
+}
+
+.message.is-info-light .message-body {
+  background-color: var(--surface6);
+  padding: var(--padding-2) var(--padding-1);
+  color: var(--texte2);
+} */

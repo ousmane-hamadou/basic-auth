@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>αlpha</title>
+  </head>
+  <body>
+    <div class="page <%= !payload.authenticate ? 'dialog-active' : '' %>">
+      <%- include("../partials/header.ejs", {buttons: ['signin', 'signup']}) %>
+      <main class="main-content">
+        <h1>Welcome <%= payload.user_name %></h1>
+        <div class="container">
+          <div class="actions">
+            <button class="button">New Message</button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <% if(!payload.authenticate) { %>
+    <dialog class="dialog" open>
+      <h1>Authentification</h1>
+      <form method="post" action="/signin">
+        <div class="form-control">
+          <input class="input" type="text" name="pseudo" placeholder="pseudo" />
+        </div>
+
+        <div class="form-control">
+          <input
+            class="input"
+            type="password"
+            name="password"
+            placeholder="password"
+          />
+        </div>
+
+        <button type="submit" class="button">Connection</button>
+      </form>
+      <p>Clicker <a href="/signup">ici</a> pour creer un nouveau compte</p>
+    </dialog>
+    <% } %>
+  </body>
+</html>
